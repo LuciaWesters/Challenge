@@ -1,0 +1,319 @@
+ @import url("https://use.typekit.net/brf3zbn.css");
+
+*{
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-family: "brandon-grotesque";
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  background-color: #00004d;
+}
+
+
+/**header**/
+
+header{
+  overflow: hidden;
+}
+
+.logo img{
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+/**main**/
+
+main{
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+
+/**voortgang**/
+
+.balk{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{
+  color:#000!important;
+  background-color: black;
+  box-shadow: inset 4px 4px 5px #0059b3;
+}
+
+.w3-round-large{
+  border-radius:8px;
+}
+
+.w3-container{
+  padding:0.01em 16px;
+}
+
+.w3-blue,.w3-hover-blue:hover{
+  color: black;
+  background-color: #80bfff;
+  animation: load 3s normal forwards;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 32%; }
+}
+
+/*https://codepen.io/traf/pen/oKbaqQ*/
+
+
+/*blokjes*/
+
+.blokje{
+  margin-bottom: 50px;
+}
+
+.nummer{
+  color: #80bfff;
+  text-shadow: 2px 2px 3px #0059b3;
+}
+
+.onderdeel{
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+  grid-template-areas:
+    "kopje kopje"
+    "meter info";
+}
+
+.kopje{
+  grid-area: kopje;
+}
+
+.meter{
+  grid-area: meter;
+}
+
+.perc{
+  align-self: center;
+}
+
+.info{
+  grid-area: info;
+}
+
+.informatie{
+  grid-area: informatie;
+}
+
+.voortgang{
+  grid-area: voortgang;
+}
+
+.snelheid{
+  grid-area: snelheid;
+}
+
+.brandstof{
+  grid-area: brandstof;
+}
+
+.zwaartekracht{
+  grid-area: zwaartekracht;
+  display: flex;
+  flex-direction: column;
+}
+
+p{
+  text-transform: none;
+  font-style: italic;
+}
+
+.extra{
+  font-size: 13px;
+  color: lightgrey;
+  font-style: normal;
+}
+
+
+/*** media query 1: tablet ***/
+
+@media only screen and (min-width: 720px) and (max-width: 1023px){
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 0px;
+    column-gap: 20px;
+    justify-content: center;
+    grid-template-areas:
+      "informatie informatie"
+      "voortgang voortgang"
+      "snelheid brandstof"
+      "zwaartekracht zwaartekracht";
+  }
+
+  .onderdeel{
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "kopje kopje"
+      "meter meter"
+      "info info";
+  }
+
+  .logo img{
+    width: 280px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+  }
+
+  main{
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .blokje{
+    margin-bottom: 25px;
+  }
+
+  p{
+    font-size: 16px;
+  }
+
+  .extra{
+    font-size: 15px;
+  }
+}
+
+
+/*** media query 2: desktop klein ***/
+
+@media only screen and (min-width: 1024px) and (max-width: 1919px){
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 0px;
+    column-gap: 20px;
+    justify-items: center;
+    grid-template-areas:
+      "informatie informatie informatie"
+      "voortgang voortgang voortgang"
+      "snelheid brandstof zwaartekracht";
+  }
+
+  .logo img{
+    width: 285px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 60px;
+  }
+
+  .informatie{
+    margin-bottom: 20px;
+  }
+
+  .onderdeel{
+    display: grid;
+    align-items: start;
+    max-height: 500px;
+    grid-template-rows: 1fr 1.5fr 1fr;
+    grid-template-areas:
+      "kopje kopje"
+      "meter meter"
+      "info info";
+  }
+
+  .info{
+    align-self: start;
+  }
+
+  p{
+    font-size: 19px;
+  }
+
+  .extra{
+    font-size: 17px;
+  }
+}
+
+
+/*** media query 3: desktop groot ***/
+
+@media only screen and (min-width: 1920px){
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 0px;
+    column-gap: 50px;
+    justify-items: center;
+    grid-template-areas:
+      "informatie informatie informatie"
+      "voortgang voortgang voortgang"
+      "snelheid brandstof zwaartekracht";
+  }
+
+  .logo img{
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 80px;
+  }
+
+  .informatie{
+    margin-bottom: 20px;
+  }
+
+  .onderdeel{
+    display: grid;
+    align-items: center;
+    height: 800px;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-areas:
+      "kopje kopje"
+      "meter meter"
+      "info info";
+  }
+
+  .info{
+    align-self: start;
+  }
+
+  p{
+    font-size: 30px;
+  }
+
+  .extra{
+    font-size: 27px;
+  }
+
+  .balk{
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .w3-container{
+    padding:0.01em 16px;
+    height: 40px;
+  }
+
+  .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{
+    font-size: 25px;
+    align-self: center;
+  }
+
+  h2{
+    font-size: 35px;
+  }
+
+}

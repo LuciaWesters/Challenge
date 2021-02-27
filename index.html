@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html lang="nl">
-	<head>
-		<meta charset="UTF-8" />
-		<title>gerrit</title>
-		<link type="text/css" href="styles/my_style.css" rel="stylesheet" />
-		<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="scripts/my_scripts.js"></script>
-	</head>
-	<body>
-		<section id="woonkamer">
-			<img id="background" src="images/background.jpg" />
-			<img id="gerrit" src="images/gerrit.png" />
-		</section>
-		<p>Spongebob Squarepants, Nickelodeon Animation Studios 1999</p>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard SpaceX</title>
+    <link href="style/index.css" type="text/css" rel="stylesheet" />
+    <link href="style/progressbar.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="scripts/graph.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+    <script src="scripts/progress.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="SpaceX" />
+      </div>
+    </header>
+
+    <main class="grid-container">
+      <div class="blokje informatie">
+        <p>Volg hier de voortgang van de reis, de actuele snelheid, de huidige hoeveelheid brandstof en het verloop van de zwaartekracht!</p>
+      </div>
+
+      <div class=" blokje voortgang">
+        <h2>Voortgang: nog <span class="nummer">153.680.000</span> km</h2>
+        <div class="balk">
+          <div class="w3-light-grey w3-round-large">
+            <div class="w3-container w3-blue w3-round-large" style="width:32%">32%</div>
+          </div>
+        </div>
+        <div class="info">
+          <h3></h3>
+          <p>De afgelegde afstand is nu 72.320.000 km. Dit is 32% van de totale afstand; 226.000.000 km. De afstand naar Mars is nog 153.680.000 km.</p>
+        </div>
+      </div>
+
+      <div class="blokje snelheid onderdeel">
+        <h2 class="kopje">snelheid: <span class="nummer">22.680</span> km/h</h2>
+        <div class="meter">
+          <div class="box">
+            <div class="chart" data-percent="81" data-scale-color="#ffb400"><div class="perc">81%</div></div>
+          </div>
+        </div>
+        <div class="info">
+          <p>De snelheid is nu 22.680 km/h. Dit is 81% van de maximale snelheid; 28.000 km/h.</p>
+        </div>
+      </div>
+
+      <div class="blokje brandstof onderdeel">
+        <h2 class="kopje">brandstof: <span class="nummer">504.000</span> kg</h2>
+        <div class="meter">
+          <div class="box">
+            <div class="chart" data-percent="72" data-scale-color="#ffb400"><div class="perc">72%</div></div>
+          </div>
+        </div>
+        <div class="info">
+          <p>De totale brandstof is nu 504.000 kg. Dit is 72% van de meegenomen brandstof; 700.000 kg. Op Mars zal dit opnieuw worden aangevuld.</p>
+        </div>
+      </div>
+
+      <div class="blokje zwaartekracht onderdeel">
+        <h2 class="kopje">zwaartekracht: <span class="nummer">1.055</span> m/s&#178;</h2>
+        <div class="meter">
+          <div class="grafiek" style="width:90%; margin:20px auto;">
+            <canvas id="Graph" style="width:100%;"></canvas>
+          </div>
+        </div>
+        <div class="info">
+          <p class="extra">Verticale as is in m/s&#178; en horizontale as is in maanden.</p>
+          <p>Op dit moment is de zwaartekracht 1.055 m/s&#178;. In bovenstaande grafiek is het verloop van de hoeveelheid zwaartekracht te zien.</p>
+        </div>
+      </div>
+    </main>
+
+  </body>
 </html>
